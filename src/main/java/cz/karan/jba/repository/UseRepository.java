@@ -6,4 +6,8 @@ import cz.karan.jba.entity.User;
 
 public interface UseRepository extends JpaRepository<User, Integer> {
 
+	User findByName(String name);
+
+	
+
 }

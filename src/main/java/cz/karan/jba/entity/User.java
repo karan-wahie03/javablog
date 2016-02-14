@@ -17,6 +17,8 @@ public class User {
 	private Integer id;
 	private String name;
 	private String email;
+	private String password;
+	private boolean enabled;
 	@ManyToMany
 	@JoinTable
 	private List<Role> roles;
@@ -50,6 +52,16 @@ public class User {
 	public List<Role> getRoles() {
 		return roles;
 	}
+	
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
@@ -61,6 +73,14 @@ public class User {
 
 	public void setBlogs(List<Blog> blogs) {
 		this.blogs = blogs;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 

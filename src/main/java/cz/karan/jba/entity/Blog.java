@@ -72,6 +72,9 @@ public class Blog {
 		this.items = items;
 	}
 	
-	
+	List<Blog> findByUser(User user){
+		return user.getBlogs();
+	}
+
 
 }

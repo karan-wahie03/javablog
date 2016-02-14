@@ -1,6 +1,7 @@
 package cz.karan.jba.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -77,6 +78,10 @@ public class Item {
 		this.blog = blog;
 	}
 	
+	List<Item> findByBlog(Blog blog)
+	{
+		return blog.getItems();
+	}
 
 
 }
