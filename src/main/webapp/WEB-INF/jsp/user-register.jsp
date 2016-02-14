@@ -3,7 +3,7 @@
 
     <%@ include file="../layout/taglib.jsp" %>
 
-    
+    <jsp:include page="../layout/classic.jsp" flush="true"/>
     
     <form:form commandName="user" cssClass="form-horizontal">
     	
@@ -34,3 +34,5 @@
     		<input type="submit" value="Save" class="btn btn-l btn-primary" />
     	</div>
     </form:form>
+    
+       <%@ include file="../layout/footer.jsp" %>

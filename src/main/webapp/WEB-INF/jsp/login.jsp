@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+   <jsp:include page="../layout/classic.jsp" flush="true"/>
     
     <style>
     
@@ -40,7 +41,6 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-Ads by CinemaPlus-4.2v X | i 
     
     </style>
     
@@ -51,3 +51,5 @@ Ads by CinemaPlus-4.2v X | i
         <input type="password" id="j_assword" class="form-control" placeholder="Password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
+      
+      <%@ include file="../layout/footer.jsp" %>

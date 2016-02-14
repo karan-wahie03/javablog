@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,14 +34,11 @@ crossorigin="anonymous"
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><tiles:getAsString name="title"/></title>
+<title>meri banayi hui website!! hahahahaha</title>
 </head>
 <body>
 
 
-<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
-
-<tilesx:useAttribute name="current"/>
 
 <div class ="container">
  <!-- Static navbar -->
@@ -62,29 +59,20 @@ crossorigin="anonymous"
               <security:authorize access="hasRole('ROLE_ADMIN')">
               	<li>class="${current == 'users' ? 'active' : ''}"<a href="<spring:url value="/user.html"/>">Users</a></li>
               </security:authorize>
-              <li>class="${current == 'register' ? 'active' : ''}"<a href="<spring:url value="/register.html"/>">Registration</a></li>
+             <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register.html"/>">Registration</a></li>
               <security:authorize access="! isAuthenticated()">
-              	<li>class="${current == 'login' ? 'active' : ''}"<a href="<spring:url value="/login.html"/>">Login</a></li>
+              	<li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login.html"/>">Login</a></li>>
               </security:authorize>
               <security:authorize access="isAuthenticated()">
-              <li>class="${current == 'users' ? 'active' : ''}"<a href="<spring:url value="/account.html"/>">My Account</a></li>
+             <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/account.html"/>">Users</a></li>
               	<li>class="<a href="<spring:url value="/logout"/>">Logout</a></li>
               </security:authorize>
-              <li><a href="#">Contact</a></li>
               </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
-      </div>
-
+    
 
 
 
@@ -93,10 +81,6 @@ crossorigin="anonymous"
 <br><br>
 
 
-<center>
-	<tiles:insertAttribute name="footer"/>
-
-</center>
 
 
 </div>
