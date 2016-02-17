@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import cz.karan.jba.entity.Blog;
 import cz.karan.jba.entity.User;
+import cz.karan.jba.service.BlogService;
 import cz.karan.jba.service.UserService;
 
 @Controller
@@ -19,10 +21,21 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private BlogService blogService;
+	
 	@ModelAttribute("user")
-	public User Construct(){
+	public User constructUser(){
 		return new User();
 	}
+	
+	
+	@ModelAttribute("blog")
+	public Blog constructBlog(){
+		return new Blog();
+	}
+	
+	
 	
 	
 	@RequestMapping("/users")
@@ -43,6 +56,7 @@ public class UserController {
 		return"user-register";
 	}
 	
+	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public String doRegistrer(@ModelAttribute("user") User user)
 	{
@@ -55,4 +69,29 @@ public class UserController {
 		model.addAttribute("user", userService.findOneWithBlog(name));
 		return "user-detail";
 	}
+	
+	
+	@RequestMapping(value="/account", method=RequestMethod.POST)
+	public String doAddBlog(@ModelAttribute("blog") Blog blog, Principal principle){
+		String name= principle.getName();
+		blogService.save(blog,name);
+		return"redirect:/account.html";
+	}
+	
+	
+	@RequestMapping("blog/remove/{id}")
+	public String removeBlog(@PathVariable int id){
+		blogService.delete(id);
+		return "redirect:/account.html";
+	}
+	
+	
+	
+	@RequestMapping("users/remove/{id}")
+	public String removeUser(@PathVariable int id){
+		userService.delete(id);
+		return "redirect:/users.html";
+	}
+	
+	
 }

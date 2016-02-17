@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
    <jsp:include page="../layout/classic.jsp" flush="true"/>
-    
+   <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
     <style>
     
     
@@ -45,11 +45,19 @@
     </style>
     
     
-    <form class="form-signin" role="form" action="/j_spring_security_check" method="POST">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" id="j_username" class="form-control" placeholder="Name" required autofocus>
-        <input type="password" id="j_assword" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
+    <div class="container">
+
+		<form class="form-signin" role="form"
+			action="<spring:url value="/login" />" method="POST">
+			<h2 class="form-signin-heading">Please sign in</h2>
+			<input type="text" name="username" class="form-control"
+				placeholder="Name" required autofocus> <input
+				type="password" name="password" class="form-control"
+				placeholder="Password" required>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
+				in</button>
+		</form>
+
+	</div>
       
       <%@ include file="../layout/footer.jsp" %>

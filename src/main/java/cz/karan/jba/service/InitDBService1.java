@@ -71,7 +71,7 @@ public class InitDBService1 {
 		item1.setBlog(blogJavaVids);
 		item1.setTitle("first");
 		item1.setLink("http://www.javavids.com");
-		item1.setPublioshedDate(new Date());
+		item1.setPublishedDate(new Date());
 		itemRepository.save(item1);
 		
 
@@ -79,7 +79,7 @@ public class InitDBService1 {
 		item2.setBlog(blogJavaVids);
 		item2.setTitle("second");
 		item2.setLink("http://www.javavids.com");
-		item2.setPublioshedDate(new Date());
+		item2.setPublishedDate(new Date());
 		itemRepository.save(item2);
 	}
 }

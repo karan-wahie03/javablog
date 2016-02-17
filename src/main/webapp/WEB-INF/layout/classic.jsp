@@ -17,6 +17,11 @@ crossorigin="anonymous">
 integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" 
 crossorigin="anonymous">
 
+<script
+ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+ integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+ crossorigin="anonymous"></script>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
@@ -57,15 +62,15 @@ crossorigin="anonymous"
             <ul class="nav navbar-nav">
               <li class="${current == 'índex' ? 'active' : ''}"><a href="<spring:url value="/"/>">Home</a></li>
               <security:authorize access="hasRole('ROLE_ADMIN')">
-              	<li>class="${current == 'users' ? 'active' : ''}"<a href="<spring:url value="/user.html"/>">Users</a></li>
+              	 <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/users.html"/>">Users</a></li>
               </security:authorize>
              <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register.html"/>">Registration</a></li>
               <security:authorize access="! isAuthenticated()">
-              	<li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login.html"/>">Login</a></li>>
+              	<li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login.html"/>">Login</a></li>
               </security:authorize>
               <security:authorize access="isAuthenticated()">
-             <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/account.html"/>">Users</a></li>
-              	<li>class="<a href="<spring:url value="/logout"/>">Logout</a></li>
+             <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/account.html"/>">My Account</a></li>
+              	<li><a href="<spring:url value="/logout"/>">Logout</a></li>
               </security:authorize>
               </ul>
           </div><!--/.nav-collapse -->
