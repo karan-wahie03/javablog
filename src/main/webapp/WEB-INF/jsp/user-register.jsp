@@ -22,11 +22,14 @@
 					<form:errors path="name" />
 				</div>
 			</div>
+			<br><br><br>
 			<div class="form-group">
 				<label for="email" class="col-sm-2 control-label">Email</label>
 				<div class="col-sm-10">
 					<form:input path="email" cssClass="form-control" />
+					<form:errors path="email" />
 				</div>
+				<br><br>
 			</div>
 			<div class="form-group">
 				<label for="password" class="col-sm-2 control-label">Password</label>
@@ -35,18 +38,51 @@
 					<form:errors path="password" />
 				</div>
 			</div>
+			<br><br><br>
+			
 			<div class="form-group">
 				<label for="password" class="col-sm-2 control-label">Confirm Password</label>
 				<div class="col-sm-10">
-					<input type="password" name="pwd_again" id="pwd_again" class="form-control" />
+					<input type="password" name="confirm_password" id="confirm_password" class="form-control">
 				</div>
 			</div>
+			<br><br>
+			
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<input type="submit" value="Save" class="btn btn-default" />
 				</div>
 			</div>
 		</form:form>
+		
+	<script type="text/javascript" >
+	
+	$(document).ready(function(){
+		$(".registrationForm").validate({
+			
+			rules:{
+				name:{
+					required: true,
+					minlength: 3
+				},
+				email:{
+					required: true,
+					email: true
+				},
+				password:{
+					required: true,
+					minlength: 5
+				},
+				confirm_password:{
+					required: true,
+					minlength: 5,
+					equalTo: "#password"
+				},
+			}
+		})	
+	});
+	
+	</script>
 
 	</div>
 

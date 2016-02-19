@@ -12,7 +12,7 @@
 <jsp:include page="../layout/classic.jsp" flush="true"/>
 
 
-<h1> ${user.name }
+<h1><c:out value="${user.name }"></c:out> 
 </h1>
 
 
@@ -33,6 +33,8 @@
         <h4 class="modal-title" id="myModalLabel">New Blog</h4>
       </div>
       <div class="modal-body">
+      
+      
        <div class="form-group">
 				<label for="name" class="col-sm-2 control-label">Name:</label>
 				<div class="col-sm-10">
@@ -85,7 +87,7 @@
   <div class="tab-content">
   <c:forEach items="${user.blogs}" var= "blog">
   
-   <div role="tabpanel" class="tab-pane active" id="blog_${blog.id}">
+   <div  class="tab-pane " id="blog_${blog.id}">
   						
   						
   					<h1>${blog.name}</h1>
@@ -101,11 +103,11 @@
 		</tr>
 	</thead>
 	<tbody>
-	<c:forEach items="${blog.items}" var="item">
+	<c:forEach items= "${blog.items}" var="item">
 	
 	<tr>
-		<td>${item.title}</td>
-		<td>${item.link}</td>
+		<td><c:out value="${item.title}"></c:out></td>
+		<td><c:out value="${item.link}"></c:out></td>
 		</tr>
 	
 	</c:forEach>
@@ -145,7 +147,7 @@
 	
     
     
-    
+</div>    
     
     
     

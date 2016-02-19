@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.URL;
 
 /**
  * @author Shivangi
@@ -22,8 +25,11 @@ public class Blog {
 	@GeneratedValue
 	private Integer id;
 	
+	@Size(min= 1 , message="The blog name should atleast 1 character long ")
 	private String name;
 	
+	@Size(min=1, message="Invalid URL")
+	@URL(message="Invalid URL")
 	private String url;
 	
 	@ManyToOne
