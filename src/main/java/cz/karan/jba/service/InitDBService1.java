@@ -72,7 +72,7 @@ public class InitDBService1 {
 		item1.setTitle("first");
 		item1.setLink("http://www.javavids.com");
 		item1.setPublishedDate(new Date());
-		itemRepository.save(item1);
+		//itemRepository.save(item1);
 		
 
 		Item item2 = new Item();
@@ -80,6 +80,6 @@ public class InitDBService1 {
 		item2.setTitle("second");
 		item2.setLink("http://www.javavids.com");
 		item2.setPublishedDate(new Date());
-		itemRepository.save(item2);
+		//itemRepository.save(item2);
 	}
 }

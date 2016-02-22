@@ -15,14 +15,17 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
+import cz.karan.jba.annonation.UniqueUserName;
+
 @Entity
 public class User {
 
 	@Id
 	@GeneratedValue
 	private Integer id;
-	@Column(name="username")
+	@Column(name="username", unique=true)
 	@Size( min=3 ,  message="The name should be atleast 3 characters long" )
+	@UniqueUserName(message="This user name alreadu exists")
 	private String name;
 	@Size(min=1, message="Invalid Email Address")
 	@Email(message="Invalid Email Address")

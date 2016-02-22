@@ -18,9 +18,11 @@ public class Item {
 	private Integer id;
 	
 	private String link;
-	
+
+	@Column(length=1500)
 	private String description;
 	
+	@Column(length=1500)
 	private String title;
 	
 	@Column(name="published_date")

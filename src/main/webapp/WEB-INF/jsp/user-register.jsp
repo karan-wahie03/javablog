@@ -78,8 +78,14 @@
 					minlength: 5,
 					equalTo: "#password"
 				},
+				highlight: function(element){
+					$(element).closest('.form-group').removeClass('has-sucess').addClass('has-error');
+				},
+				highlight: function(element){
+					$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+				}
 			}
-		})	
+		});	
 	});
 	
 	</script>
@@ -88,3 +94,5 @@
 
     
        <%@ include file="../layout/footer.jsp" %>
+       </body>
+       </html>

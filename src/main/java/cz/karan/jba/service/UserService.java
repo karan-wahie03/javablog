@@ -72,6 +72,10 @@ public class UserService {
 		// TODO Auto-generated method stub
 		userRepository.delete(id);
 	}
+	public Object findOneWithName(String name) {
+		// TODO Auto-generated method stub
+		return userRepository.findByName(name);
+	}
 
 		
 	}
